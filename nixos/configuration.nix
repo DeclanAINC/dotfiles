@@ -5,11 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-	./hardware-configuration.nix
-	./nvidia.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./nvidia.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -19,70 +18,70 @@
   # System wide packages
   # To search, run: `$ nix search wget`
   environment.systemPackages = with pkgs; [
-	# //-- 	 Apps 	--//
-	# Programs 
-	libreoffice-fresh
-	google-chrome
-	sublime-merge
-	flameshot
-	peek
-	dolphin
-	unzip
-        rofi
+    # //-- 	 Apps 	--//
+    # Programs 
+    libreoffice-fresh
+    google-chrome
+    sublime-merge
+    flameshot
+    peek
+    dolphin
+    unzip
+    rofi
 
-	# Text editors
-  	vim
-	neovim
-	nerdfonts
-        vscodium
+    # Text editors
+    vim
+    neovim
+    nerdfonts
+    vscodium
 
-	# //-- 	 Languages   --//
-	# Rust
-	cargo
-	rustc
-	rust-analyzer
+    # //-- 	 Languages   --//
+    # Rust
+    cargo
+    rustc
+    rust-analyzer
 
-	# python
-	python3
-	python310Packages.black
+    # python
+    python3
+    python310Packages.black
 
-	# JS
-	nodejs
+    # JS
+    nodejs
 
-	# //-- 	 Utils  --//
-	# Quality of life
-	xmousepasteblock	# block middle-mouse paste
-	autotiling		# auto tiling for i3
+    # //-- 	 Utils  --//
+    # Quality of life
+    xmousepasteblock	# block middle-mouse paste
+    autotiling		# auto tiling for i3
 
-	# CLI tools
-	wget
-	git
-	gh
-        btop
-	ripgrep
-	loc
-	thefuck
-	pandoc
+    # CLI tools
+    wget
+    git
+    gh
+    btop
+    ripgrep
+    loc
+    thefuck
+    pandoc
 
-	# //-- 	 System  --//
-	# linuxKernel.packages.linux_zen.perf
+    # //-- 	 System  --//
+    # linuxKernel.packages.linux_zen.perf
 
-	# Build
-	gcc
-	pkg-config
-	udev.dev
+    # Build
+    gcc
+    pkg-config
+    udev.dev
 
-	# Env tools
-	direnv
-	nix-direnv
+    # Env tools
+    direnv
+    nix-direnv
 
-	# Shell
-	fish
-	alacritty
-	tmux
+    # Shell
+    fish
+    alacritty
+    tmux
 
-	# Window manager
-	i3
+    # Window manager
+    i3
   ];
 
 
@@ -128,17 +127,17 @@
   services.xserver = {
     enable = true;
     desktopManager = {
-	xterm.enable = false;
+	    xterm.enable = false;
     };
 
-      windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu #application launcher most people use
-        i3status # gives you the default i3 status bar
-        i3lock #default i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
-     ];
+    windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu #application launcher most people use
+      i3status # gives you the default i3 status bar
+      i3lock #default i3 screen locker
+      i3blocks #if you are planning on using i3blocks over i3status
+    ];
     };
 
     # Keymap
@@ -146,11 +145,11 @@
     xkb.variant = "";
   };
   services.displayManager = {
-        defaultSession = "none+i3";
-	autoLogin.enable = true;
-  # Enable automatic login for the user.
-	autoLogin.user = "user";
-    };
+    defaultSession = "none+i3";
+    autoLogin.enable = true;
+    # Enable automatic login for the user.
+    autoLogin.user = "user";
+  };
 
 
   # Enable CUPS to print documents.
