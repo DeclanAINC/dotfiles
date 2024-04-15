@@ -28,11 +28,13 @@
 	peek
 	dolphin
 	unzip
+        rofi
 
 	# Text editors
   	vim
 	neovim
 	nerdfonts
+        vscodium
 
 	# //-- 	 Languages   --//
 	# Rust
@@ -55,7 +57,8 @@
 	# CLI tools
 	wget
 	git
-	btop
+	gh
+        btop
 	ripgrep
 	loc
 	thefuck
@@ -178,7 +181,6 @@
     packages = with pkgs; [
       firefox
       kate
-      vscodium
     #  thunderbird
     ];
   };
