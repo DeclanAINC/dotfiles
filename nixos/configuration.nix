@@ -131,11 +131,7 @@
 	xterm.enable = false;
     };
 
-    displayManager = {
-        defaultSession = "none+i3";
-    };
-
-    windowManager.i3 = {
+      windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
         dmenu #application launcher most people use
@@ -146,9 +142,16 @@
     };
 
     # Keymap
-    layout = "au";
-    xkbVariant = "";
+    xkb.layout = "au";
+    xkb.variant = "";
   };
+  services.displayManager = {
+        defaultSession = "none+i3";
+	autoLogin.enable = true;
+  # Enable automatic login for the user.
+	autoLogin.user = "user";
+    };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -184,10 +187,6 @@
     #  thunderbird
     ];
   };
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "user";
 
   # Shell & Terminal
   programs.fish.enable = true;
