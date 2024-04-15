@@ -171,13 +171,14 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.user = {
+  users.users.declan = {
     isNormalUser = true;
-    description = "Tom Miles";
+    description = "Declan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
       kate
+      vscodium
     #  thunderbird
     ];
   };
