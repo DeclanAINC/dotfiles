@@ -8,92 +8,16 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./sys_pkgs.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # System wide packages
-  # To search, run: `$ nix search wget`
-  environment.systemPackages = with pkgs; [
-    # //-- 	 Apps 	--//
-    # Programs 
-    libreoffice-fresh
-    google-chrome
-    sublime-merge
-    flameshot
-    peek
-    dolphin
-    unzip
-    rofi
-    arandr # gui for xrandr
-    htop
-    barrier
-
-    # Text editors
-    vim
-    neovim
-    # nerdfonts
-    vscodium
-
-    # //-- 	 Languages   --//
-    # Rust
-    cargo
-    rustc
-    rust-analyzer
-
-    # python
-    python3
-    python310Packages.black
-
-    # JS
-    nodejs
-
-    # //-- 	 Utils  --//
-    # Quality of life
-    xmousepasteblock	# block middle-mouse paste
-    autotiling		# auto tiling for i3
-
-    # CLI tools
-    wget
-    git
-    gh
-    btop
-    ripgrep
-    loc
-    thefuck
-    pandoc
-
-    # //-- 	 System  --//
-    # linuxKernel.packages.linux_zen.perf
-
-    # Build
-    gcc
-    pkg-config
-    udev.dev
-
-    # Env tools
-    direnv
-    nix-direnv
-
-    # Shell
-    fish
-    alacritty
-    tmux
-
-    # Window manager
-    i3
-  ];
-  fonts.packages = with pkgs; [ nerdfonts ];
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "declan_nixos"; # Define your hostname.
+  networking.hostName = "radon1_nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -184,11 +108,6 @@
     isNormalUser = true;
     description = "Declan";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
-    ];
   };
 
   # Shell & Terminal
