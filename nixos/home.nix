@@ -29,7 +29,7 @@
     firefox
 
     # Editors
-    vscodium
+    # vscode
     neovim
     libreoffice-fresh
     kate
@@ -81,5 +81,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.git = import ./programs/git.nix;
+  programs.vscode = import ./programs/vscode.nix pkgs;
   xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
 }

@@ -1,4 +1,7 @@
 # xsession.windowManager.i3 =
+# find config options:
+# @ https://nix-community.github.io/home-manager/options.xhtml
+# @ https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#L143
 { pkgs, ... }:
 let 
   mod = "Mod4";
