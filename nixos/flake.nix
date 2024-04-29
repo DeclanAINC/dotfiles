@@ -20,22 +20,9 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./configuration.nix
-
+            ./config.nix
             home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.declan = import ./home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
-            # inputs.home-manager.nixosModules.default
-            # ({ pkgs, ... }: {
-            #   nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            #   environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            # })
+            ./user.nix
           ];
         };
 

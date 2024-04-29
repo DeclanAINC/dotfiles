@@ -50,7 +50,6 @@
   # services.xserver.desktopManager.plasma5.enable = true;
 
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
-	
 
   services.xserver = {
     enable = true;
@@ -103,16 +102,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.declan = {
-    isNormalUser = true;
-    description = "Declan";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
 
-  # Shell & Terminal
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
 
   # Auto Update
   system.autoUpgrade = {
