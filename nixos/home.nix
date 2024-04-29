@@ -81,4 +81,5 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.git = import ./programs/git.nix;
+  xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
 }
