@@ -18,20 +18,20 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Adds the 'hello' command to your environment. It prints a friendly
-    # "Hello, world!" when run.
-    hello
+    # Termincal Applications
+    lazygit
 
+    # GUI applications
     barrier
     flameshot
     google-chrome
     sublime-merge
+    firefox
 
     # Editors
     vscodium
     neovim
     libreoffice-fresh
-    firefox
     kate
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -80,4 +80,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.git = import ./programs/git.nix;
 }
