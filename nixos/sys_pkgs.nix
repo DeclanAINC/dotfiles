@@ -43,6 +43,7 @@
     git
     gh
     git-credential-oauth
+    git-credential-manager
     btop
     ripgrep
     loc
