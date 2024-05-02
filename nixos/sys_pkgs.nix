@@ -42,7 +42,7 @@
     wget
     git
     gh
-    git-credential-manager
+    git-credential-oauth
     btop
     ripgrep
     loc
@@ -58,7 +58,7 @@
     udev.dev
     # dotnet-sdk
     # dotnet-runtime
-    dotnetCorePackages.sdk_7_0_1xx
+    # dotnetCorePackages.sdk_7_0_1xx
 
     # Env tools
     direnv

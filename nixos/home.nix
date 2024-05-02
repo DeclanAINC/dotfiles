@@ -80,7 +80,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.git = import ./programs/git.nix;
+  # programs.git-credential-oauth.enalbe = true;
+  programs.git = import ./programs/git.nix pkgs;
   programs.vscode = import ./programs/vscode.nix pkgs;
   xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
 }
