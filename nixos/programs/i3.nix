@@ -11,6 +11,7 @@ in rec {
   config = {
     workspaceLayout = "default";
     modifier = mod;
+    terminal = "alacritty";
     fonts = {
       names = ["pango: Font Awesome" "Noto Sans Regular"];
       size = 6.0;
@@ -23,5 +24,11 @@ in rec {
       followMouse = false;
       newWindow = "urgent";
     };
+    startup = [
+      {
+        command = "xmousepasteblock";
+        always = true;
+      }
+    ];
   };
 }

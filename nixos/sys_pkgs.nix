@@ -61,6 +61,7 @@
     # Env tools
     direnv
     nix-direnv
+    podman
 
     # Shell
     fish

@@ -18,6 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # terminal stuff
+    alacritty-theme
+
     # Termincal Applications
     lazygit
 
@@ -27,6 +30,8 @@
     google-chrome
     sublime-merge
     firefox
+    discord
+    slack
 
     # Editors
     # vscode
@@ -80,8 +85,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # programs.git-credential-oauth.enalbe = true;
+  programs.fish = import ./programs/fish.nix pkgs;
   programs.git = import ./programs/git.nix pkgs;
   programs.vscode = import ./programs/vscode.nix pkgs;
   xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
+
 }

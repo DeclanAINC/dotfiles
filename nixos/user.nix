@@ -1,6 +1,6 @@
 # Configure User related stuff here, for thing that needs to be set in the
 # base configuration instead of through home-manager
-{ config, pkgs, home-manager, ... }: {
+{ config, pkgs, catppuccin, home-manager, ... }: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.declan = {
     isNormalUser = true;
