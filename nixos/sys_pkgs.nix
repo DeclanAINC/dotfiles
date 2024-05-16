@@ -49,6 +49,7 @@
     loc
     thefuck
     pandoc
+    lshw
 
     # //-- 	 System  --//
     # linuxKernel.packages.linux_zen.perf
@@ -61,7 +62,6 @@
     # Env tools
     direnv
     nix-direnv
-    podman
 
     # Shell
     fish

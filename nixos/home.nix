@@ -23,6 +23,7 @@
 
     # Termincal Applications
     lazygit
+    yazi
 
     # GUI applications
     barrier
@@ -89,5 +90,5 @@
   programs.git = import ./programs/git.nix pkgs;
   programs.vscode = import ./programs/vscode.nix pkgs;
   xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
-
+  programs.yazi = import ./programs/yazi.nix pkgs;
 }
