@@ -1,6 +1,6 @@
 # Configure User related stuff here, for thing that needs to be set in the
 # base configuration instead of through home-manager
-{ config, pkgs, catppuccin, home-manager, ... }: {
+{ config, pkgs, lib, catppuccin, home-manager, ... }: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.declan = {
     isNormalUser = true;
@@ -18,10 +18,4 @@
   # Optionally, use home-manager.extraSpecialArgs to pass
   # arguments to home.nix
   home-manager.users.declan = import ./home.nix;
-  
-  # inputs.home-manager.nixosModules.default
-  # ({ pkgs, ... }: {
-  #   nixpkgs.overlays = [ rust-overlay.overlays.default ];
-  #   environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-  # })
 }

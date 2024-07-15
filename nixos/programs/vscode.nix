@@ -1,20 +1,24 @@
 # programs.vscode = 
-{ pkgs, ... }: 
+{ pkgs, extensions, ... }: 
 {
+  # user = "declan";
+  # homeDir = "/home/declan";
   enable = true;
   package = pkgs.vscodium;
-  extensions = with pkgs.vscode-extensions; [
-    github.copilot
-    github.copilot-chat
-    streetsidesoftware.code-spell-checker
-    serayuzgur.crates
-    tamasfe.even-better-toml
-    # removed until i can figure out how to confiure it not to try to auto close every carrot
-    # techtheawesome.rust-yew 
-    rust-lang.rust-analyzer
-    mkhl.direnv
-    arrterian.nix-env-selector
-    jnoortheen.nix-ide
-    bradlc.vscode-tailwindcss
-  ];
+  # extensions = with pkgs.vscode-extensions; [
+  #   github.copilot
+  #   github.copilot-chat
+  #   streetsidesoftware.code-spell-checker
+  #   serayuzgur.crates
+  #   tamasfe.even-better-toml
+  #   # removed until i can figure out how to confiure it not to try to auto close every carrot
+  #   # techtheawesome.rust-yew 
+  #   rust-lang.rust-analyzer
+  #   mkhl.direnv
+  #   arrterian.nix-env-selector
+  #   jnoortheen.nix-ide
+  #   bradlc.vscode-tailwindcss
+  #   # wgsl-analyzer.wgsl-analyzer
+  # ];
+
 }

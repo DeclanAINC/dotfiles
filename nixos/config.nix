@@ -102,7 +102,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
+  # enable tailscale
+  services.tailscale.enable = true;
 
   # Auto Update
   system.autoUpgrade = {

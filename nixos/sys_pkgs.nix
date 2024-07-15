@@ -50,6 +50,7 @@
     thefuck
     pandoc
     lshw
+    tailscale
 
     # //-- 	 System  --//
     # linuxKernel.packages.linux_zen.perf

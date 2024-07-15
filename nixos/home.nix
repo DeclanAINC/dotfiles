@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -33,6 +33,7 @@
     firefox
     discord
     slack
+    freecad
 
     # Editors
     # vscode
@@ -88,7 +89,27 @@
   programs.home-manager.enable = true;
   programs.fish = import ./programs/fish.nix pkgs;
   programs.git = import ./programs/git.nix pkgs;
-  programs.vscode = import ./programs/vscode.nix pkgs;
+  programs.vscode = {
+    # user = "declan";
+    # homeDir = "/home/declan";
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      github.copilot
+      github.copilot-chat
+      streetsidesoftware.code-spell-checker
+      serayuzgur.crates
+      tamasfe.even-better-toml
+      # removed until i can figure out how to confiure it not to try to auto close every carrot
+      # techtheawesome.rust-yew 
+      rust-lang.rust-analyzer
+      mkhl.direnv
+      arrterian.nix-env-selector
+      jnoortheen.nix-ide
+      bradlc.vscode-tailwindcss
+      # wgsl-analyzer.wgsl-analyzer
+    ];
+  };
   xsession.windowManager.i3 = import ./programs/i3.nix pkgs;
   programs.yazi = import ./programs/yazi.nix pkgs;
 }
